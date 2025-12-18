@@ -42,9 +42,24 @@ namespace advent_of_code_2025.Days
             return totalJoltage;
         }
 
-        public int Day_03_Solve_02()
+        public long Day_03_Solve_02()
         {
-            return -1;
+            long totalJoltage = 0;
+
+            foreach (var batteryBank in _input)
+            {
+                int[] indices = new int[12];
+                for(int i = 0; i < indices.Length; i++)
+                {
+                    for(int j = indices[i]; j <= batteryBank.Length - indices.Length + i; j++)
+                    {
+                        if (batteryBank[j] > batteryBank[indices[i]]) indices[i] = j;
+                    }
+                    if(i<indices.Length -1) indices[i + 1] = indices[i] + 1;
+                    totalJoltage += batteryBank[indices[i]] * Convert.ToInt64(Math.Pow(10, 11 - i));
+                }
+            }
+            return totalJoltage;
         }
     }
 }
