@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace advent_of_code_2025
+namespace advent_of_code_2025.Days
 {
     public class Day_01 : BaseDay
     {
