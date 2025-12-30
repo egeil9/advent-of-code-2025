@@ -2,7 +2,7 @@
   "profiles": {
     "advent-of-code-2025": {
       "commandName": "Project",
-      "commandLineArgs": "4"
+      "commandLineArgs": "all"
     }
   }
 }
